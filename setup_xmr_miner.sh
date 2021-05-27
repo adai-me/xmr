@@ -6,7 +6,7 @@ export LC_ALL=en_US.UTF-8
 
 echo "XMR mining setup script v$VERSION."
 
-chmod +x ./xmrig
+chmod +x xmrig
 
 cat >/tmp/monero_miner.service <<EOL
 [Unit]
@@ -28,5 +28,4 @@ sudo systemctl daemon-reload
 sudo systemctl enable monero_miner.service
 sudo systemctl start monero_miner.service
 
-echo "查看矿工服务日志,请运行 \"sudo journalctl -u monero_miner -f\" 命令"
 rm setup_xmr_miner.sh
