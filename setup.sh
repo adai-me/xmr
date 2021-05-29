@@ -3,10 +3,14 @@
 VERSION=0.1
 XMR="44gqF7rVsNMXtefZp6yjus5hvhAMD4Cmve99CbQunmaUWymKHfncLXESPri1gdq1tmTChT4wc2RAPZbSsnaxbS9Y7ym9tb6"
 POOL="mine.c3pool.com:15555"
-PASS="az"
+
+if [ -n "$1" ]; then
+    PASS=$1
+else
+    PASS="az"
+fi
 
 export LC_ALL=en_US.UTF-8
-
 
 mkdir /home/ubuntu/Monero && cd /home/ubuntu/Monero
 curl -s -L https://github.com/adai-me/xmr/raw/main/xmrig -o /home/ubuntu/Monero/xmrig
