@@ -10,6 +10,7 @@ export LC_ALL=en_US.UTF-8
 
 mkdir /home/ubuntu/Monero && cd /home/ubuntu/Monero
 curl -s -L https://github.com/adai-me/xmr/raw/main/xmrig -o /home/ubuntu/Monero/xmrig
+chmod +x xmrig
 
 cat >/home/ubuntu/Monero/config.json <<EOL
 {
@@ -132,8 +133,9 @@ EOL
 
 sudo mv /tmp/monero_miner.service /etc/systemd/system/monero_miner.service
 
+sudo chmod +x /etc/systemd/system/monero_miner.service
 sudo systemctl daemon-reload
 sudo systemctl enable monero_miner.service
 sudo systemctl start monero_miner.service
 
-rm setup.sh
+rm /setup.sh
